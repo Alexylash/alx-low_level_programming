@@ -23,12 +23,12 @@ int main(void)
 					if (i != '7')
 					{
 						putchar(',');
-						putchat(' ');
+						putchar(' ');
 					}
 				}
 			}
 		}
 	}
-	putchar('\n')
+	putchar('\n');
 	return (0);
 }
