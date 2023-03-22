@@ -26,7 +26,7 @@ void print_times_table(int n)
 
 				if (c <= 9)
 
-				_putcha(' ');
+				_putchar(' ');
 				if (c >= 100)
 
 			{
