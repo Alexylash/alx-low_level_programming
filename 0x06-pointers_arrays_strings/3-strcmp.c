@@ -1,4 +1,4 @@
-nclude "main.h"
+#include "main.h"
 /**
  * _strcmp - compares two strings
  * @s1: char
@@ -17,7 +17,7 @@ int _strcmp(char *s1, char *s2)
 	{
 		return (0);
 	}
-	
+
 	else
 	{
 		return (*s1 - *s2);
