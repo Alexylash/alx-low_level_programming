@@ -15,7 +15,11 @@ int check(int i, int j)
 		return (-1);
 	return (check(i + 1, j));
 }
-
+/**
+ * _sqrt_recursion - return the natural square root of a number
+ * @n: number
+ * Return: natural square of num
+ */
 
 int _sqrt_recursion(int n)
 {
