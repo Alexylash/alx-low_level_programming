@@ -1,38 +1,52 @@
 #include "lists.h"
 
 /**
- * _strlen - returns length of str
- * @s: char
- * Return: c
+ * str_len - function to count the length of string
+ *
+ * @s: string to be counted
+ *
+ * Return: length of string
  */
-int _strlen(const char *s)
+int str_len(const char *s)
 {
-	int c = 0;
-
-	while (s[c] != '\0')
-		c++;
-	return (c);
+	if (*s == '\0')
+		return (0);
+	return (1 + str_len(++s));
 }
 
 /**
- * add_node - adds a new node at the beginning of a list_t list
- * @head: head of list
- * @str: string
- * Return: address of the new element, or NULL if it failed
+ * add_node - a function that adds a new node at the beginning of a list_t
+ * list.
+ *
+ * @head: head of the linked list
+ * @str: string to be added
+ *
+ * Return: pointer to newly created node || null
  */
+
 list_t *add_node(list_t **head, const char *str)
 {
-	list_t *ad;
-	unsigned int l = 0;
+	list_t *temp;
 
-	while (str[l])
-		l++;
-	ad = malloc(sizeof(list_t));
-	if (ad == NULL)
-		return (NULL);
-	ad->str = strdup(str);
-	ad->len = l;
-	ad->next = *head;
-	*head = ad;
-	return (*head);
+	temp = (list_t *)malloc(sizeof(list_t));
+	if (temp == NULL)
+	return (NULL);
+	if (str == NULL)
+	{
+	temp->str = NULL;
+	temp->len = 0;
+	}
+	else
+	{
+	temp->str = strdup(str);
+	if (temp->str == NULL)
+	{
+	free(temp);
+	return (NULL);
+	}
+	temp->len = (unsigned int) str_len(str);
+	temp->next = *head;
+	*head = temp;
+	}
+	return (temp);
 }
